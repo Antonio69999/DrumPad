@@ -70,8 +70,7 @@
 
 function playing_audio(keycode) {
     document.querySelector('audio[data-key="'  + keycode + '"]').play();    //fonction qui, une fois qu'elle à recuperer les keycode, joue le son correspondant
-    document.querySelector('div[data-key="' + keycode + '"]').classList.toggle("playing"); //permet de toggle la classe css "playing"
-    document.querySelector('audio[data-key="'  + keycode + '"]').loop = true;
+    document.querySelector('div[data-key="' + keycode + '"]').classList.toggle("playing"); //permet de toggle la classe css "playing"a
     // console.log(keycode);
 }
 
@@ -83,4 +82,11 @@ window.addEventListener('keydown', (event) => {  //function qui récupère le ke
 window.addEventListener('keyup', (event) => {
     playing_audio(event.keyCode);
     console.log(event.keyCode);
+});
+
+
+async function new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(), 1000;
+    }, timeout);
 });
